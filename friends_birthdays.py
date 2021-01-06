@@ -11,7 +11,7 @@ def add_birthdays(user_birthdays):
 		add_records = input('\nAdd more records?(yes/no): ')
 	
 def lookup_birthdays(user_birthdays):
-	print('You can either look up birthday using user\'s name or look up user\'s name using their birthday dates')
+	print('You can either look up birthday using user\'s name or look up user\'s name using their birthday')
 	print('+ Enter 1 to look up birthday[using user\'s name]: ')
 	print('+ Enter 2 to look up user\'s name[using birthday]:')
 	try:
