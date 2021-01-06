@@ -1,6 +1,3 @@
-
-#storing names and birthdays in a dictionary
-
 def add_birthdays(user_birthdays):
 	add_records = input('Add records?(yes/no): ')
 	while add_records.title() == 'Yes' or add_records == 'YES':
@@ -109,7 +106,6 @@ def main():
 
 main()
 
-#yeah!
 
 
 
