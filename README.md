@@ -6,6 +6,6 @@
 
 # note: the dictionary is currently empty,
 # kindly select 2 to add your friends
-# name and birthdays
+# names and birthdays
 # then you get to play around it
 # have fun :) !
