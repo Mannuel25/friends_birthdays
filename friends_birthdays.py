@@ -1,14 +1,18 @@
 def add_birthdays(user_birthdays):
 	add_records = input('Add records?(yes/no): ')
-	while add_records.title() == 'Yes' or add_records == 'YES':
-		name = input('Enter your name: ')
-		name = name.title()
-		if name not in user_birthdays:
-			birthday_date = input('Enter your birthday(dd/mm/yyyy): ')
-			user_birthdays[name] = birthday_date
-		else:
-			print('Name already exists')	
-		add_records = input('\nAdd more records?(yes/no): ')
+	PICKS = ['YES','Yes','NO','No']
+	if add_records.title() not in PICKS:
+		print('Invalid input!')
+	else:	
+		while add_records.title() == 'Yes' or add_records == 'YES':
+			name = input('Enter your name: ')
+			name = name.title()
+			if name not in user_birthdays:
+				birthday_date = input('Enter your birthday(dd/mm/yyyy): ')
+				user_birthdays[name] = birthday_date
+			else:
+				print('Name already exists')	
+			add_records = input('\nAdd more records?(yes/no): ')
 
 def lookup_birthdays(user_birthdays):
 	print('You can either look up user\'s name or user\'s birthday')
@@ -35,6 +39,8 @@ def lookup_birthdays(user_birthdays):
 						print(f'{user} : {date}')
 			else:
 				print('Birthday not found')
+		else:
+			print('Invalid input!')		
 
 def change_birthdays(user_birthdays):
 	print('You can either modify a user\'s birthday or user\'s name')
@@ -64,6 +70,8 @@ def change_birthdays(user_birthdays):
 				print('Name has been modified')
 			else:
 				print('Birthday not found')
+		else:
+			print('Invalid input!')		
 
 def delete_birthdays(user_birthdays):
 	name = input('Enter user\'s name: ')
@@ -81,12 +89,16 @@ def menu_choice():
 	print('4. Delete a birthday')
 	print('5. Quit the program')
 	print('Make a selection from the menu:')
+	CHOICES = [1,2,3,4,5]
 	try:
 		choice = int(input('\nEnter a valid choice: '))
 	except ValueError:
 		print('Invalid input!')	
 	else:	
-		return choice	
+		if choice not in CHOICES:
+			print('Invalid input!')
+		else:	
+			return choice	
 
 def main():
 	user_birthdays = {}
@@ -102,8 +114,20 @@ def main():
 			change_birthdays(user_birthdays)
 		elif user_choice == 4:
 			delete_birthdays(user_birthdays)
+		elif user_choice == 5:
+			print('You just ended the program..')	
 
 main()
+
+
+
+
+
+
+
+
+
+
 
 
 
